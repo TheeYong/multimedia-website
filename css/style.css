@@ -123,7 +123,7 @@ button:focus {
     font-family: "Roboto", sans-serif;
     font-weight: normal;
     line-height: 26px;
-    color: #777777;
+    color: #000000;
     margin-bottom: 0px; }
 
 /* End Main Title Area css
@@ -343,7 +343,7 @@ button:focus {
     min-height: 780px;
     z-index: 1; }
     .blog_banner .banner_inner .overlay {
-      background: url(../img/banner/banner-2.jpg) no-repeat scroll center center;
+      background: url(../img/banner/banner-5.jpg) no-repeat scroll center center;
       opacity: .5;
       height: 125%;
       position: absolute;

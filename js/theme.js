@@ -116,16 +116,35 @@
 	});
 	
 	
-	$(".skill_main").each(function() {
-        $(this).waypoint(function() {
-            var progressBar = $(".progress-bar");
-            progressBar.each(function(indx){
-                $(this).css("width", $(this).attr("aria-valuenow") + "%")
-            })
-        }, {
-            triggerOnce: true,
-            offset: 'bottom-in-view'
+	// $(".skill_main").each(function() {
+    //     $(this).waypoint(function() {
+    //         var progressBar = $(".progress-bar");
+    //         progressBar.each(function(indx){
+    //             $(this).css("width", $(this).attr("aria-valuenow") + "%")
+    //         })
+    //     }, {
+    //         triggerOnce: true,
+    //         offset: 'bottom-in-view'
 
+    //     });
+    // });
+    $(".skill_main").each(function() {
+    $(this).waypoint(function() {
+        var progressBar = $(".progress-bar");
+        progressBar.each(function(indx){
+            // Get the current value, min, and max
+            var currentValue = parseFloat($(this).attr("aria-valuenow"));
+            var maxValue = parseFloat($(this).attr("aria-valuemax"));
+
+            // Calculate the correct percentage
+            var percentage = (currentValue / maxValue) * 100;
+
+            // Set the width using the calculated percentage
+            $(this).css("width", percentage + "%");
+        });
+        }, {
+        triggerOnce: true,
+        offset: 'bottom-in-view'
         });
     });
 	
